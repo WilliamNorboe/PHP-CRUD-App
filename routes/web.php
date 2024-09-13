@@ -10,6 +10,8 @@ Route::get('/', function () {
 
 Route::post('/register', [UserController::class, 'register']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/login', [UserController::class, 'login']);
+
+// blog post route
+

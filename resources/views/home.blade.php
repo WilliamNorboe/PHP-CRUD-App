@@ -8,6 +8,21 @@
 <body>
     @auth
     <p>congrats you are logged in.</p>
+
+    <form action = "/firstwebsite/public/logout" method = "POST">
+        @csrf
+        <button>Log Out</button>
+    </form>
+
+    <div style = "border: 3px solid black">
+        <h2>Create a New Post</h2>
+        <form action = "/create-post" method = "POST">
+            @csrf
+            <input type = "text" name = "title" placeholder = "post title"></input>
+            <textarea name = "body" placeholder = "body content ..."></textarea>
+            <button>Submit Post</button>
+        </form>
+    </div>
     @else
 
     <div style = "border: 3px solid black;">
@@ -20,7 +35,19 @@
             <button>Register</button>
         </form>
     </div>
-    
+
+
+    <div style = "border: 3px solid black;">
+        <h2>Login</h2>
+        <form action = "/firstwebsite/public/login" method = "POST">
+            @csrf
+            <input name = "loginname" type = "text" placeholder = "name">
+            <input name = "loginpassword" type = "password" placeholder = "password">
+            <button>Login in</button>
+        </form>
+    </div>
+
+
     @endauth
 
 </body>
