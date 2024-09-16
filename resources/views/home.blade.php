@@ -36,7 +36,6 @@
         </form>
     </div>
 
-
     <div style = "border: 3px solid black;">
         <h2>Login</h2>
         <form action = "/firstwebsite/public/login" method = "POST">
@@ -46,7 +45,6 @@
             <button>Login in</button>
         </form>
     </div>
-
 
     @endauth
 
