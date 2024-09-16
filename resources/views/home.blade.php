@@ -23,6 +23,23 @@
             <button>Submit Post</button>
         </form>
     </div>
+
+    <div style = "border: 3px solid black;">
+        <h2>All Posts</h2>
+        @foreach($posts as $post)
+            <div style = "background-color: grey; padding: 10px; margin: 10px;">
+                <h3>{{$post['title']}}</h3>
+                {{$post['body']}}
+                <p><a href="/firstwebsite/public/edit-post/{{$post->id}}">Edit</a></p>
+                <form action = "/firstwebsite/public/delete-post/{{$post->id}}" method = "POST">
+                    @csrf
+                    @method('Delete')
+                    <button>Delete</button>
+                </form>
+            </div>
+        @endforeach
+    </div>
+
     @else
 
     <div style = "border: 3px solid black;">
@@ -45,6 +62,8 @@
             <button>Login in</button>
         </form>
     </div>
+
+
 
     @endauth
 
